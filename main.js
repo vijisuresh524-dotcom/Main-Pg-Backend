@@ -19,7 +19,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://main-pg-task-manager.netlify.app/",
     credentials: true,
   })
 );
