@@ -17,13 +17,17 @@ connectDB();
 
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://main-pg-task-manager.netlify.app",
+];
+
 app.use(
   cors({
-    origin: "https://main-pg-task-manager.netlify.app/",
+    origin: allowedOrigins,
     credentials: true,
   })
 );
-
 app.use(express.json());
 
 app.get("/", (req, res) => {
