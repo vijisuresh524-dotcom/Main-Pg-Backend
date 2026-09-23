@@ -2,7 +2,7 @@ const UserModel = require("../models/user.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const register = async (req, res) => {
+const registerUser = async (req, res) => {
   try {
     const {
       name,
@@ -57,12 +57,12 @@ const register = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: "Registration failed",
-      error: error.message,
+      
     });
   }
 };
 
-const login = async (req, res) => {
+const loginUser = async (req, res) => {
   try {
     const {
       email,
@@ -124,12 +124,12 @@ const login = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: "Login failed",
-      error: error.message,
+      
     });
   }
 };
 
 module.exports = {
-  register,
-  login,
+  registerUser,
+  loginUser,
 };
